@@ -23,6 +23,65 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        drawer: Drawer(
+          width: 200,
+          child: ListView(
+            children: [
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Willkomen in deinem Menü"),
+              ),
+              Divider(),
+              Card(
+                child: ListTile(
+                  onTap: () {
+                    setState(() {
+                      _pageIndex = 0;
+                    });
+                  },
+                  leading: Icon(Icons.home),
+                  title: Text("Home"),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  onTap: () {
+                    setState(() {
+                      _pageIndex = 1;
+                    });
+                  },
+                  leading: Icon(Icons.attach_file),
+                  title: Text("Dokumente"),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  onTap: () {
+                    setState(() {
+                      _pageIndex = 2;
+                    });
+                  },
+                  leading: Icon(Icons.euro),
+                  title: Text("Kosten"),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  onTap: () {
+                    setState(() {
+                      _pageIndex = 3;
+                    });
+                  },
+                  leading: Icon(Icons.calendar_month_rounded),
+                  title: Text("Kalender"),
+                ),
+              ),
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          title: Text("Willkommen"),
+        ),
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (value) {
             setState(() {
